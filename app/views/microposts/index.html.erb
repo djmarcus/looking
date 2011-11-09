@@ -1,0 +1,16 @@
+<h1>All Microposts</h1>
+
+<%= form_tag microposts_path, :method => :get do %>
+   <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search posts", :name => nil %>
+  </p>
+<% end %>
+
+<%= will_paginate %>
+<table  class="microposts">
+   <%= render @microposts %>
+</table>
+<%= will_paginate %>
+
+
