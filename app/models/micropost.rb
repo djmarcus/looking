@@ -1,9 +1,10 @@
 class Micropost < ActiveRecord::Base
-  attr_accessible :content, :title
+  attr_accessible :content, :title, :category
 
   searchable do
     text :title, :boost => 5
     text :content
+    string :category
    end
 
   belongs_to :user
@@ -14,9 +15,4 @@ class Micropost < ActiveRecord::Base
 
   default_scope :order => 'microposts.created_at DESC'
  
-
-#  searchable do
-#    text :title, :boost => 5
-#    text :content
-#  end
 end

@@ -15,6 +15,14 @@ class PagesController < ApplicationController
 
   def auto
     @title = "Auto"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'auto'
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+    #@microposts = Micropost.paginate(:page => params[:page])
+    #@feed_items = current_user.feed.paginate(:page => params[:page])
   end
   
   def collectable
