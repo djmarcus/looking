@@ -7,11 +7,11 @@ class UsersController < ApplicationController
 
   def index
     @title = "All users"
-    @search = Sunspot.search User do
-      fulltext params[:search]
-      paginate :page => params[:page], :per_page => 30
-    end
-    @users = @search.results
+#    @search = Sunspot.search User do
+#      fulltext params[:search]
+#      paginate :page => params[:page], :per_page => 30
+#    end
+#    @users = @search.results
   end
 
 		      

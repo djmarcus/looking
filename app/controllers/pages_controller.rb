@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
   def home
-  #  @search = Micropost.search do
-  #    fulltext params[:search]
-  #  end
-  #  @microposts = @search.results
+    @search = Micropost.search do
+      fulltext params[:search]
+    end
+    @microposts = @search.results
    
    
     @title = "Home"
@@ -21,8 +21,8 @@ class PagesController < ApplicationController
       paginate :page => params[:page], :per_page => 30
     end
     @microposts = @search.results
-    #@microposts = Micropost.paginate(:page => params[:page])
-    #@feed_items = current_user.feed.paginate(:page => params[:page])
+   #@microposts = Micropost.paginate(:page => params[:page])
+   #@feed_items = current_user.feed.paginate(:page => params[:page])
   end
   
   def collectable

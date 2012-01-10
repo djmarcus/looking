@@ -1,8 +1,8 @@
 require 'digest'
 class User < ActiveRecord::Base
-  searchable do
-    text :name
-  end
+#  searchable do
+#    text :name
+#  end
 
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
