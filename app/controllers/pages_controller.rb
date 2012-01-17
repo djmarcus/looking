@@ -18,6 +18,7 @@ class PagesController < ApplicationController
     @search = Micropost.search do
       fulltext params[:search]
       with :category,   'auto'
+      order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
     @microposts = @search.results
@@ -27,10 +28,26 @@ class PagesController < ApplicationController
   
   def collectable
     @title = "Collectable"
+
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'collectable'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
   end
 
   def nostalgia
     @title = "Nostalgia"
+
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'nostalgia'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
   end
 
   def contact

@@ -3,3 +3,16 @@
   Look here for Nostalgic items like old band t-shirts and vintage items.
 </p>
 
+<%= form_tag collectable_path, :method => :get do %>
+   <p>
+     <%= text_field_tag :search, params[:search] %>
+     <%= submit_tag "Search posts", :name => nil %>
+   </p>
+<% end %>
+
+<table  class="microposts">
+  <%= render @microposts %>
+</table>
+<%= will_paginate @microposts %>
+<br />
+

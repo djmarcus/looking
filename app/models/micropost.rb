@@ -1,10 +1,13 @@
 class Micropost < ActiveRecord::Base
   attr_accessible :content, :title, :category
 
+  CATEGORIES = ['auto', 'nostalgia', 'collectable']
+
   searchable do
     text :title, :boost => 5
     text :content
     string :category
+    time :created_at
    end
 
   belongs_to :user
