@@ -64,6 +64,53 @@ describe MicropostsController do
     end
   end
 
+  describe "GET 'show'" do
+    before(:each) do
+      @user = Factory(:user)
+      @micropost = Factory(:micropost, 
+                           :user => @user, 
+			   :title => "FB", 
+			   :content => "Foo Bar", 
+			   :category => "auto")
+  end
+
+    it "should be successful" do
+      get :show, :id => @micropost
+      response.should be_success
+    end
+
+    it "should find the right micropost" do
+      get :show, :id => @micropost
+      assigns(:micropost).should == @micropost
+    end
+   
+    it "should have the right title" do
+      get :show, :id => @micropost
+      response.should have_selector("title", :content => @micropost.category)
+    end
+
+    it "should include the user's email" do
+      get :show, :id => @micropost
+      response.should have_selector("a", :content => @user.email)
+    end
+    
+    it "should include the micropost content" do
+      get :show, :id => @micropost
+      response.should have_selector("p", :content => @micropost.content)
+    end
+
+    it "should include the micropost title" do
+      get :show, :id => @micropost
+      response.should have_selector("h1", :content => @micropost.title)
+    end
+  
+    it "should display the category on the page" do
+      get :show, :id => @micropost
+      response.should have_selector("p", :content => @micropost.category)
+    end
+  end
+
+
   describe "DELETE 'destroy'" do
 
     describe "for an unauthorized user" do

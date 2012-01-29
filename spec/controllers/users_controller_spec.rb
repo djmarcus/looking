@@ -107,9 +107,7 @@ describe UsersController do
        mp2 = Factory(:micropost, :user => @user, :title => "BQ", :content => "Baz quux")
        get :show, :id => @user
        response.should have_selector("span.title",   :content   => mp1.title)
-       response.should have_selector("span.content", :content => mp1.content)
        response.should have_selector("span.title",   :content   => mp1.title) 
-       response.should have_selector("span.content", :content => mp2.content)
      end
   end
 

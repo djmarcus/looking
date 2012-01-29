@@ -39,11 +39,11 @@ describe "Microposts" do
           fill_in :micropost_title,   :with => title
 	  fill_in :micropost_category, :with => category
           click_button
-          response.should have_selector("span.content", :content => content)
+          response.should have_selector("span.title", :content => title)
 	  
 	  #check to see that the post shows up in the correct category
 	  visit auto_path
-	  response.should have_selector("span.content", :content => content)
+	  response.should have_selector("span.title", :content => title)
         end.should change(Micropost, :count).by(1)
       end
     end
