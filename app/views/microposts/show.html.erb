@@ -1,0 +1,10 @@
+<table class="micropost" summary="Micropost detail">
+      <p>Category: <%= @micropost.category %></p>
+      <br/>
+      Reply to: <%= mail_to @user.email %>
+      <hr>
+      <h1 class="micropost"><%= @micropost.title %></h1>
+      <hr>
+      <p><%= @micropost.content%></p>
+</table>
+
