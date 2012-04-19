@@ -1,4 +1,9 @@
 Looking::Application.routes.draw do
+
+  devise_for :consumers
+
+  devise_for :users
+
   get "sessions/new"
   
 
