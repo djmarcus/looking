@@ -1,20 +1,21 @@
 Looking::Application.routes.draw do
 
-  devise_for :consumers
+  #devise_for :consumers
 
   devise_for :users
 
-  get "sessions/new"
+  #get "sessions/new"
   
 
-  resources :users
-  resources :sessions,   :only => [:new, :create, :destroy]
-#  resources :microposts, :only => [:create, :destroy]
+#  resources :users
+  #resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts
 
-  match '/signup',      :to => 'users#new'
-  match '/signin',      :to => 'sessions#new'
-  match '/signout',     :to => 'sessions#destroy'
+  #match '/signup',      :to => 'users#new'
+  #match '/signin',      :to => 'sessions#new'
+  #match '/signout',     :to => 'sessions#destroy'
+
+
   match '/auto',        :to => 'pages#auto'
   match '/collectable', :to => 'pages#collectable'
   match '/nostalgia',   :to => 'pages#nostalgia'

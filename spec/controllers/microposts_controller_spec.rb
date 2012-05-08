@@ -7,19 +7,19 @@ describe MicropostsController do
 
     it "should deny access to 'create'" do
       post :create
-      response.should redirect_to(signin_path)
+      response.should redirect_to(new_user_session_path)
     end
 
     it "should deny access to 'destroy'" do
       delete :destroy, :id => 1
-      response.should redirect_to(signin_path)
+      response.should redirect_to(new_user_session_path)
     end
   end
 
   describe "POST 'create'" do
 
     before(:each) do
-      @user = test_sign_in(Factory(:user))
+      @user = sign_in(Factory(:user))
     end
 
     describe "failure" do
@@ -118,7 +118,7 @@ describe MicropostsController do
       before(:each) do
         @user = Factory(:user)
         wrong_user = Factory(:user, :email => Factory.next(:email))
-        test_sign_in(wrong_user)
+        sign_in(wrong_user)
         @micropost = Factory(:micropost, :user => @user)
       end
 
@@ -131,7 +131,7 @@ describe MicropostsController do
     describe "for an authorized user" do
 
       before(:each) do
-        @user = test_sign_in(Factory(:user))
+        @user = sign_in(Factory(:user))
         @micropost = Factory(:micropost, :user => @user)
       end
 

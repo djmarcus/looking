@@ -4,12 +4,10 @@
       <td class="main">
         <h1 class="micropost">What are you looking for?</h1>
         <%= render 'shared/micropost_form' %>
-	
+	<%= render 'shared/feed' %>
 
-        <%= render 'shared/feed' %>
       </td>
       <td class="sidebar round">
-        <%= render 'shared/user_info' %>
       </td>
     </tr>
   </table>
@@ -20,6 +18,6 @@
     This is the home page for lookinforit.com
   </p>
 
-  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
 <% end %>
 
