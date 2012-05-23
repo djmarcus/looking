@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
 #  before_filter :authenticate_user!, :only => [:create, :destroy]
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only=> [:create, :destroy]
 #  before_filter :authorized_user, :only => :destroy
  
 
@@ -31,8 +31,12 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
+    #@micropost.destroy
+    #nil.destroy
+    @micropost= Micropost.find(params[:id])
     @micropost.destroy
-    redirect_back_or root_path
+    #redirect_back_or root_path
+    redirect_to :back
   end
 
   private

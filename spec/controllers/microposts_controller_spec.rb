@@ -132,7 +132,13 @@ describe MicropostsController do
 
       before(:each) do
         @user = sign_in(Factory(:user))
-        @micropost = Factory(:micropost, :user => @user)
+        #@micropost = Factory(:micropost, :user => @user)
+        #@micropost = Factory(:micropost,
+        #                     :user => @user,
+        #                     :title => "FB",
+        #                     :content => "Foo Bar",
+        #                     :category => "auto")
+        @micropost = nil
       end
 
       it "should destroy the micropost" do
