@@ -7,8 +7,7 @@
     </span>
     <span class="title"><%= link_to feed_item.title, feed_item %></span></br>
     <span class="timestamp">
-      Posted <%= time_ago_in_words(feed_item.created_at) %> dragons ago.
-      Id: <%= feed_item.id %>
+      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
   </td>
   <% if  (feed_item.user)==current_user %>
