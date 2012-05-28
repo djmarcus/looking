@@ -116,6 +116,9 @@ describe MicropostsController do
     describe "for an unauthorized user" do
 
       before(:each) do
+	#@request.env['HTTP_REFERER'] = '/microposts/'
+	#  post :create, { :user => { :email => 'invalid@abc' } }
+	  
         @user = Factory(:user)
         wrong_user = Factory(:user, :email => Factory.next(:email))
         sign_in(wrong_user)
@@ -131,15 +134,11 @@ describe MicropostsController do
     describe "for an authorized user" do
 
       before(:each) do
-        @user = sign_in(Factory(:user))
-        #@micropost = Factory(:micropost, :user => @user)
-        #@micropost = Factory(:micropost,
-        #                     :user => @user,
-        #                     :title => "FB",
-        #                     :content => "Foo Bar",
-        #                     :category => "auto")
-        @micropost = nil
+	@user = Factory(:user)
+        sign_in(@user)
+        @micropost = Factory(:micropost, :user => @user)
       end
+
 
       it "should destroy the micropost" do
         lambda do 

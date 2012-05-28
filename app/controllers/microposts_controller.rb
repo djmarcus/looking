@@ -2,8 +2,6 @@ class MicropostsController < ApplicationController
 #  before_filter :authenticate_user!, :only => [:create, :destroy]
   before_filter :authenticate_user!, :only=> [:create, :destroy]
 #  before_filter :authorized_user, :only => :destroy
- 
-
 
   def index
     @search = Micropost.search do
@@ -31,19 +29,10 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
-    #@micropost.destroy
-    #nil.destroy
     @micropost= Micropost.find(params[:id])
     @micropost.destroy
-    #redirect_back_or root_path
-    redirect_to :back
+    redirect_to(session[:return_to] || root_path)
+    session[:return_to] = nil
   end
-
-  private
-
-#    def authorized_user
-#      @micropost = current_user.microposts.find_by_id(params[:id])
-#      redirect_to root_path if @micropost.nil?
-#    end
 end
 
