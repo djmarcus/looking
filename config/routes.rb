@@ -2,8 +2,8 @@ Looking::Application.routes.draw do
 
   #devise_for :consumers
 
-  devise_for :users
-
+  devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"} 
+  #devise_for :users
   #get "sessions/new"
   
 
@@ -14,7 +14,6 @@ Looking::Application.routes.draw do
   #match '/signup',      :to => 'users#new'
   #match '/signin',      :to => 'sessions#new'
   #match '/signout',     :to => 'sessions#destroy'
-
 
   match '/auto',        :to => 'pages#auto'
   match '/collectable', :to => 'pages#collectable'

@@ -61,4 +61,5 @@ class PagesController < ApplicationController
   def microposts
     @title = "Microposts"
   end
+
 end

@@ -18,6 +18,7 @@ group :test do
   gem 'factory_girl_rails', '1.0'
   gem 'rspec', '2.6.0'
   gem 'webrat', '0.7.1'
+  gem 'capybara'
 end
 
 gem 'rake', '~> 0.9.2'
