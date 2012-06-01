@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120419225934) do
+ActiveRecord::Schema.define(:version => 20120601025910) do
 
   create_table "microposts", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(:version => 20120419225934) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "microposts", ["content"], :name => "index_microposts_on_content"
