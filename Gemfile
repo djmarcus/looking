@@ -9,7 +9,8 @@ gem 'will_paginate', '3.0.pre2'
 #gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "paperclip"
 gem 'devise'
-
+gem 'aws-s3'
+gem 'aws-sdk'
 group :development do
   gem 'rspec-rails', '2.6.1'
 #  gem 'annotate-models', '1.0.4'
