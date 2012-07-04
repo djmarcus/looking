@@ -29,7 +29,9 @@ Factory.sequence :email do |n|
 end
 
 Factory.define :micropost do |micropost|
+  include ActionDispatch::TestProcess
   micropost.title "Foo Bar"
   micropost.content 'Is not to be confused with "fubar".'
+  #micropost.photo { fixture_file_upload '/Library/Application\ Support/Apple/iChat\ Icons/Gems/Ruby\ Round.gif', 'image/gif'}
   micropost.association :user
 end

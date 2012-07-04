@@ -19,7 +19,9 @@ class Micropost < ActiveRecord::Base
   default_scope :order => 'microposts.created_at DESC'
 
   has_attached_file :photo, { 
-   :styles => { :small => "300x300>" }
+   :styles => { :small => "300x300>" },
+ #  :default_url => '/images/default_:style_avatar.png'
+
   }.merge(PAPERCLIP_STORAGE_OPTIONS)
 
 #  :url  => ":attachment/:id/:style/:basename.:extension",
