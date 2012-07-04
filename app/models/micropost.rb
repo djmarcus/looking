@@ -20,7 +20,7 @@ class Micropost < ActiveRecord::Base
 
   has_attached_file :photo, { 
    :styles => { :small => "300x300>" },
-   :default_url => '/images/:attachment/missing_:style_avatar.png'
+   :default_url => '/images/:attachment/missing_:style.png'
 
   }.merge(PAPERCLIP_STORAGE_OPTIONS)
 
