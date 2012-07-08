@@ -4,8 +4,9 @@
       <td class="main">
         <h1 class="micropost">What are you looking for?</h1>
         <%= render 'shared/micropost_form' %>
-	<%= render 'shared/feed' %>
-
+	<table  class="microposts">
+	  <%= render @microposts %>
+        </table>
       </td>
       <td class="sidebar round">
       </td>

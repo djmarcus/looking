@@ -15,6 +15,7 @@ Looking::Application.routes.draw do
   #match '/signin',      :to => 'sessions#new'
   #match '/signout',     :to => 'sessions#destroy'
 
+  #match '/users',       :to => 'users#index', :as => "all_users", :via => "get"
   match '/auto',        :to => 'pages#auto'
   match '/collectable', :to => 'pages#collectable'
   match '/nostalgia',   :to => 'pages#nostalgia'
