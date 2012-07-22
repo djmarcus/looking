@@ -11,6 +11,9 @@ before_filter :authenticate
 
   end
 
+#show action?
+#edit action?
+
   def destroy
     if User.find(params[:id]).admin?
       flash[:info] = "Admins cannot delete themselves!"
