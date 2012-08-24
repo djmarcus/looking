@@ -6,6 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+
 module Looking
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -38,5 +39,55 @@ module Looking
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+ 
+
+    config.action_mailer.default_url_options = { :host => 'furious-ice-2159.heroku.com' }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default :charset => "utf-8"
+
+    ActionMailer::Base.smtp_settings = {
+      :port           => ENV['MAILGUN_SMTP_PORT'], 
+      :address        => ENV['MAILGUN_SMTP_SERVER'],
+      :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+      :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+      :domain         => 'lookinforit.com',
+      :authentication => :plain,
+
+
+
+
+#      :address => "55b4613f670756c24ca4@cloudmailin.net",
+#      :authentication => :plain,
+#      :domain => 'lookinforit.com',
+#      :user_name => 'app1908147@heroku.com',
+#      :password => '7b10d77f544c',
+#      :enable_starttls_auto => true,
+#      :port => 25
+    } 
+
+#   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+#   config.action_mailer.delivery_method = :smtp
+   
+#   config.action_mailer.smtp_settings = {
+#   :address => "smtp.gmail.com",
+#   :port => 587,
+#   :domain => 'lookinforit.com',
+#   :user_name => 'danieljohnmarcus@gmail.com',
+#   :password => '##########',
+#   :authentication => 'plain',
+#   :enable_starttls_auto => true } 
+   
+   #config.action_mailer.smtp_settings = {
+   #  :address => "http://webhooks.cloudmailin.com/cm55b4613f670756c24ca4",
+   #  :domain => 'http://cloudmailin.com/target/200',
+   #  :user_name => 'app1908147@heroku.com',
+   #  :password => '7b10d77f544c',
+   #  :authentication => 'plain',
+   #  :enable_starttls_auto => true } 
+   config.action_mailer.raise_delivery_errors = true
+     
   end
+
 end

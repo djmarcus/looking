@@ -5,7 +5,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 # Load heroku vars from local file
 #heroku_env = File.join(RAILS_ROOT, 'config', 'heroku_env.rb')
 #load(heroku_env) if File.exists?(heroku_env)
-
+#config.action_mailer.delivery_method = :smtp
 
 # Initialize the rails application
 Looking::Application.initialize!
