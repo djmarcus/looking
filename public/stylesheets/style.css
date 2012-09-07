@@ -142,11 +142,11 @@ a.sitemap:hover {
 	
 @font-face {
     font-family: 'ChunkFiveRegular';
-    src: url('fonts/Chunkfive-webfont.eot');
-    src: url('fonts/Chunkfive-webfont.eot?#iefix') format('eot'),
-         url('fonts/Chunkfive-webfont.woff') format('woff'),
-         url('fonts/Chunkfive-webfont.ttf') format('truetype'),
-         url('fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
+    src: url('/fonts/Chunkfive-webfont.eot');
+    src: url('/fonts/Chunkfive-webfont.eot?#iefix') format('eot'),
+         url('/fonts/Chunkfive-webfont.woff') format('woff'),
+         url('/fonts/Chunkfive-webfont.ttf') format('truetype'),
+         url('/fonts/Chunkfive-webfont.svg#ChunkFiveRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 	}
