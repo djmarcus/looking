@@ -41,7 +41,7 @@ anylinkmenu.init("menuanchorclass");
         <% end %>
     	<div id="header">
 		  <% if signed_in? %>
-			<div id="loginBox"><%= link_to image_tag("/images/logout.png", :class => "login"), destroy_user_session_path %></div>
+			<div id="loginBox"><%= link_to image_tag("/images/logout.png", :class => "login"), destroy_user_session_path, :method => :delete %></div>
 		  <% else %>
 			<div id="loginBox"><%= link_to image_tag("/images/login.png", :class => "login"), new_user_session_path %><%= link_to image_tag("/images/signup.png", :class => "signup"), "" %></div>
 		  <% end %>
