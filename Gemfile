@@ -27,4 +27,3 @@ end
 gem 'rake', '~> 0.9.2.2'
 
 gem 'sunspot_rails'
-gem 'sunspot_solr'

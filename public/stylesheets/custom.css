@@ -2,9 +2,9 @@
   width: 710px;
 }
 
-body {
-  background: #FFEB8C;
-}
+#body {
+#  background: #FFEB8C;
+#}
 
 header {
   padding-top: 0px;
@@ -127,12 +127,12 @@ td.main {
   padding: 1em;
 }
 
-td.sidebar {
-  width: 30%;
-  padding: 1em;
-  vertical-align: top;
-  background: #ffc;
-}
+#td.sidebar {
+#  width: 30%;
+#  padding: 1em;
+#  vertical-align: top;
+#  background: #ffc;
+#}
 
 .profile img.gravatar {
   border: 1px solid #999;
