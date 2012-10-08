@@ -215,13 +215,13 @@ a.sitemap:hover {
 	width: 160px;
 	}
 	
-#search {
-	float: left;
-	width: 232px;
-	height: 38px;
-	margin: 12px 0 0 34px;
-	background: url('/images/search_bg.png') no-repeat;
-	}
+##search {
+#	float: left;
+#	width: 232px;
+#	height: 38px;
+#	margin: 12px 0 0 34px;
+#	background: url('/images/search_bg.png') no-repeat;
+#	}
 	
 #boxFrame {
 	float:left;
