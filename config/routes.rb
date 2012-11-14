@@ -15,14 +15,18 @@ Looking::Application.routes.draw do
   #match '/signin',      :to => 'sessions#new'
   #match '/signout',     :to => 'sessions#destroy'
 
-  match '/users',       :to => 'users#index', :via => "get"
-  match '/auto',        :to => 'pages#auto'
-  match '/collectable', :to => 'pages#collectable'
-  match '/nostalgia',   :to => 'pages#nostalgia'
-  match '/contact',     :to => 'pages#contact'
-  match '/howitworks',  :to => 'pages#howitworks'
-  match '/microposts',  :to => 'pages#microposts' 
-  match '/categories',  :to => 'pages#categories'
+  match '/users',            :to => 'users#index', :via => "get"
+  match '/auto',             :to => 'pages#auto'
+  match '/collectable',      :to => 'pages#collectable'
+  match '/nostalgia',        :to => 'pages#nostalgia'
+  match '/electronics',      :to => 'pages#electronics'
+  match '/musicinstruments', :to => 'pages#musicinstruments'
+  match '/clothing',         :to => 'pages#clothing'
+  match '/sportinggoods',    :to => 'pages#sportinggoods'
+  match '/contact',          :to => 'pages#contact'
+  match '/howitworks',       :to => 'pages#howitworks'
+  match '/microposts',       :to => 'pages#microposts' 
+  match '/categories',       :to => 'pages#categories'
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:

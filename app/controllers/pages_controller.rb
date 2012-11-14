@@ -40,10 +40,53 @@ class PagesController < ApplicationController
 
   def nostalgia
     @title = "Nostalgia"
-
     @search = Micropost.search do
       fulltext params[:search]
       with :category,   'nostalgia'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+  
+  def sportinggoods 
+    @title = "Sporting Goods"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'sportinggoods'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def clothing 
+    @title = "Clothing"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'clothing'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def electronics 
+    @title = "Electronics"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'electronics'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def musicinstruments 
+    @title = "Musical Instruments"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'musicinstruments'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end

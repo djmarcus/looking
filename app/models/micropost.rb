@@ -1,7 +1,7 @@
 class Micropost < ActiveRecord::Base
   attr_accessible :content, :title, :category, :photo
 
-  CATEGORIES = ['auto', 'nostalgia', 'collectable']
+  CATEGORIES = ['auto', 'nostalgia', 'collectable', 'electronics', 'clothing', 'sportinggoods', 'musicinstruments']
 
   searchable do
     text :title, :boost => 5
