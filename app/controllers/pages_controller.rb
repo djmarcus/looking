@@ -105,4 +105,7 @@ class PagesController < ApplicationController
     @title = "Microposts"
   end
 
+  def termsofservice 
+    @title = "Terms of Service"
+  end
 end

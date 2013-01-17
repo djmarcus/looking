@@ -12,3 +12,4 @@ Looking::Application.initialize!
 
 #config.gem 'sunspot' , :lib => 'sunspot'
 #config.gem 'sunspot_rails', :lib => 'sunspot/rails'
+

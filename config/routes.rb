@@ -27,6 +27,7 @@ Looking::Application.routes.draw do
   match '/howitworks',       :to => 'pages#howitworks'
   match '/microposts',       :to => 'pages#microposts' 
   match '/categories',       :to => 'pages#categories'
+  match '/termsofservice',   :to => 'pages#termsofservice'
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:
