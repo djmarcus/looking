@@ -5,3 +5,4 @@ log/*
 tmp/
 solr/data/**/*
 config/heroku_env.rb
+public/system/microposts/photos/*
