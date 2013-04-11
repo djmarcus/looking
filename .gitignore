@@ -3,6 +3,6 @@ db/*.sqlite3
 log/*.log
 log/*
 tmp/
-solr/data/**/*
+solr/data
 config/heroku_env.rb
 public/system/microposts/photos/*
