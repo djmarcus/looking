@@ -47,7 +47,7 @@ Looking::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'furious-ice-2159.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'zany-falls-1781.heroku.com' }
   
   PAPERCLIP_STORAGE_OPTIONS = {:storage => :s3,
                                :bucket => ENV['S3_BUCKET_NAME'],
