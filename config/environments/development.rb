@@ -27,16 +27,26 @@ Looking::Application.configure do
   
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
+
+     config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'lookinforit.com',
+      :user_name => 'lookinforitemail@gmail.com',
+      :password => 'Lookin4it',
+      :authentication => 'plain',
+      :enable_starttls_auto => true }
+
   
-  config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'lookinforit.com',
-    :user_name => 'danieljohnmarcus@gmail.com',
-    :password => '##########',
-    :authentication => 'plain',
-    :enable_starttls_auto => true } 
- #
+#  config.action_mailer.smtp_settings = {
+#    :address => "smtp.mail.yahoo.com",
+#    :port => ,
+#    :domain => 'lookinforit.com',
+#    :user_name => 'lookinforitemail@ymail.com',
+#    :password => 'lookin4it',
+#    :authentication => 'plain',
+#    :enable_starttls_auto => true } 
+# #
 
   PAPERCLIP_STORAGE_OPTIONS = {}
 
