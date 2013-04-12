@@ -48,6 +48,14 @@ Looking::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { :host => 'zany-falls-1781.heroku.com' }
+       config.action_mailer.smtp_settings = {
+      :address => "smtp.gmail.com",
+      :port => 587,
+      :domain => 'lookinforit.com',
+      :user_name => ENV['GMAIL_USERNAME'],
+      :password => ENV['GMAIL_PASSWORD'],
+      :authentication => 'plain',
+      :enable_starttls_auto => true }
   
   PAPERCLIP_STORAGE_OPTIONS = {:storage => :s3,
                                :bucket => ENV['S3_BUCKET_NAME'],
