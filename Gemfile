@@ -26,6 +26,9 @@ group :test do
   gem 'capybara'
 end
 
+group :production do
+  gem 'rack-google_analytics', :require => "rack/google_analytics"
+end
 gem 'rake', '~> 0.9.2.2'
 
 gem 'sunspot_rails'

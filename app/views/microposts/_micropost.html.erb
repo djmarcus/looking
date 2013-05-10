@@ -6,6 +6,7 @@
     </span>
    </td>
    <% if ((current_user and (current_user.admin? or micropost.user==current_user ))) %>
+   <td><%= link_to 'edit', edit_micropost_path(micropost) %></td>
    <td>
      <%= link_to "delete", micropost, :method => :delete,
                                       :confirm => "You sure?",

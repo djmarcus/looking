@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
 #  before_filter :authenticate_user!, :only => [:create, :destroy]
-  before_filter :authenticate_user!, :only=> [:create, :destroy]
+  before_filter :authenticate_user!, :only=> [:create, :destroy, :edit]
 #  before_filter :authorized_user, :only => :destroy
 
   def index
@@ -26,6 +26,10 @@ class MicropostsController < ApplicationController
       @feed_items = []
       render 'pages/home'
     end
+  end
+
+  def edit
+  ##tbd...
   end
 
   def destroy
