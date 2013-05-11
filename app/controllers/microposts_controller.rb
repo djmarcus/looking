@@ -29,7 +29,17 @@ class MicropostsController < ApplicationController
   end
 
   def edit
-  ##tbd...
+    @micropost = Micropost.find(params[:id])
+  end
+
+  def update
+    @micropost = Micropost.find(params[:id])
+    if @micropost.update_attributes(params[:micropost])
+      flash[:success] = "Post updated!"
+      redirect_to @micropost
+    else
+      render 'micropost_form'
+    end
   end
 
   def destroy

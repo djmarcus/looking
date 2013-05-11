@@ -1,4 +1,11 @@
 module ApplicationHelper
+include Rails.application.routes.url_helpers
+
+  def cancel_link
+    return link_to 'Cancel update', request.env["HTTP_REFERER"], 
+      :class => 'cancel', 
+      :confirm => 'Are you sure? Any changes will be lost.'
+  end
 
   def logo
     logo_image = image_tag("LFIlogo.png", :alt => "Lookinforit.com", :class => "round")
