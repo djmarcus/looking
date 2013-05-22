@@ -20,7 +20,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost  = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      flash[:success] = "Post created!"
+      flash[:success] = "Post created!  Please allow 15 minutes before it shows up on the site."
       redirect_to root_path
     else
       @feed_items = []

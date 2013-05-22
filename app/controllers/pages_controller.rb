@@ -53,7 +53,7 @@ class PagesController < ApplicationController
     @title = "Sporting Goods"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'sportinggoods'
+      with :category,   'sporting goods'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
@@ -86,7 +86,7 @@ class PagesController < ApplicationController
     @title = "Musical Instruments"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'musicinstruments'
+      with :category,   'musical instruments'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
