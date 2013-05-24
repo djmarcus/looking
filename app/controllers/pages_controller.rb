@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'collectable'
+      with :category,   'collectables'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
