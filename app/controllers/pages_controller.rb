@@ -26,8 +26,8 @@ class PagesController < ApplicationController
    #@feed_items = current_user.feed.paginate(:page => params[:page])
   end
   
-  def collectable
-    @title = "Collectable"
+  def collectables
+    @title = "Collectables"
 
     @search = Micropost.search do
       fulltext params[:search]

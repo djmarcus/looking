@@ -17,7 +17,7 @@ Looking::Application.routes.draw do
 
   match '/users',            :to => 'users#index', :via => "get"
   match '/auto',             :to => 'pages#auto'
-  match '/collectable',      :to => 'pages#collectable'
+  match '/collectables',     :to => 'pages#collectables'
   match '/nostalgia',        :to => 'pages#nostalgia'
   match '/electronics',      :to => 'pages#electronics'
   match '/musicinstruments', :to => 'pages#musicinstruments'
