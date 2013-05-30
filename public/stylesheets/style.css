@@ -118,16 +118,18 @@ a.sitemap:hover {
 	
 #loginBox {
 	float: right;
-	width: 138px;
+	width: 248px;
 	height: 30px;
 	margin: 16px 14px 0 0;
 	}
 	
 #loginBox .login {
+        float: right;
+        margin: 4px 4px 0 0;
 	}
 	
 #loginBox .signup {
-	margin-left: 13px;
+        margin: 4px 4px 0 0;
 	}
 	
 #topNavigation {

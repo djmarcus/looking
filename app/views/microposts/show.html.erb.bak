@@ -1,0 +1,15 @@
+<table class="micropost" summary="Micropost detail">
+      <p>Category: <%= @micropost.category %></p>
+      <br/>
+      Reply to: <%= mail_to @user.email %>
+      <hr>
+      <h1 class="micropost"><%= @micropost.title %></h1>
+      <hr>
+      <p><%= @micropost.content%></p>
+      <%= image_tag @micropost.photo.url(:small) %>
+      <% if ((current_user and (current_user.admin? or @micropost.user==current_user ))) %>
+        </p>
+        <%= link_to 'edit', edit_micropost_path(@micropost) %>
+      <% end %>
+</table>
+
