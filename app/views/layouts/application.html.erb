@@ -52,7 +52,7 @@
     <div id="header">
       <% if signed_in? %>
         <div id="loginBox">
-          <%= link_to image_tag("/images/logout.png", :class => "login"), destroy_user_session_path, :method => :delete %><%= link_to image_tag("/images/HOME.gif", :class => "login"), root_path %>
+          <%= link_to image_tag("/images/logout.png", :class => "login"), destroy_user_session_path, :method => :get %><%= link_to image_tag("/images/HOME.gif", :class => "login"), root_path %>
         </div>
       <% else %>
         <div id="loginBox">
