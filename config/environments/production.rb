@@ -47,18 +47,34 @@ Looking::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'zany-falls-1781.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+  # ActionMailer Config
+  # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
-       config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => 'lookinforit.com',
-      :user_name => 'lookinforitemail@gmail.com',
-      :password => 'Lookin4it',
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :authentication => :plain,
+    :domain => ENV['GMAIL_SMTP_USER'],
+    :user_name => ENV['GMAIL_SMTP_USER'],
+    :password => ENV['GMAIL_SMTP_PASSWORD'],
+}
+
+#  config.action_mailer.delivery_method = :smtp
+#       config.action_mailer.smtp_settings = {
+#      :address => "smtp.gmail.com",
+#      :port => 587,
+#      :domain => 'lookinforit.com',
+#      :user_name => 'lookinforitemail@gmail.com',
+#      :password => 'Lookin4it',
 #      :user_name => ENV['GMAIL_USERNAME'],
 #      :password => ENV['GMAIL_PASSWORD'],
-      :authentication => 'plain',
-      :enable_starttls_auto => true }
+#      :authentication => 'plain',
+#      :enable_starttls_auto => true }
 
 #  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
