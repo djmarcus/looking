@@ -47,7 +47,7 @@ Looking::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'zany-falls-1781.herokuapp.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
