@@ -33,7 +33,7 @@ Looking::Application.configure do
       :port => 587,
       :domain => 'lookinforit.com',
       :user_name => 'lookinforitemail@gmail.com',
-      :password => 'Lookin4it',
+      :password => 'Rayaaron',
       :authentication => 'plain',
       :enable_starttls_auto => true }
 
