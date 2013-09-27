@@ -27,7 +27,7 @@ class PagesController < ApplicationController
     @title = "Automotive and Motorcycle"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'automotive & motorcycle'
+      with(:category).any_of(['auto','automotive & motorcycle'])
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
@@ -71,7 +71,7 @@ class PagesController < ApplicationController
     @title = "Collectable"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'collectable'
+      with(:category).any_of(['collectable','collectables'])
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
@@ -126,7 +126,7 @@ class PagesController < ApplicationController
     @title = "Music and Musical Instruments"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'music & musical instruments'
+      with(:category).any_of(['musical instruments','music & musical instruments'])
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end

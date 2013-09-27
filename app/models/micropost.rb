@@ -2,6 +2,7 @@ class Micropost < ActiveRecord::Base
   attr_accessible :content, :title, :category, :photo
 
   CATEGORIES = ['arts & crafts',
+                'auto',
                 'automotive & motorcycle',
                 'books',
                 'boats',
