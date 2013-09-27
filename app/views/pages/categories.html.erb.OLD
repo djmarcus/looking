@@ -1,8 +1,0 @@
-<h2>Categories</h2>
-
-<ul>
-  <li><%= link_to "Auto", auto_path %></li>
-  <li><%= link_to "Collectable", collectable_path %></li>
-  <li><%= link_to "Nostalgia", nostalgia_path %></li>
-</ul>
-

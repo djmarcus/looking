@@ -5,7 +5,6 @@ class PagesController < ApplicationController
     end
     @microposts = @search.results
    
-   
     @title = "Home"
     if signed_in?
       @micropost = Micropost.new
@@ -13,47 +12,44 @@ class PagesController < ApplicationController
     end
   end
 
-  def auto
-    @title = "Auto"
+  def arts_and_crafts 
+    @title = "Arts and Crafts"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'auto'
-      order_by :created_at, :desc
-      paginate :page => params[:page], :per_page => 30
-    end
-    @microposts = @search.results
-   #@microposts = Micropost.paginate(:page => params[:page])
-   #@feed_items = current_user.feed.paginate(:page => params[:page])
-  end
-  
-  def collectables
-    @title = "Collectables"
-
-    @search = Micropost.search do
-      fulltext params[:search]
-      with :category,   'collectables'
+      with :category,   'arts & crafts'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
     @microposts = @search.results
   end
 
-  def nostalgia
-    @title = "Nostalgia"
+  def automotive_and_motorcycle
+    @title = "Automotive and Motorcycle"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'nostalgia'
+      with :category,   'automotive & motorcycle'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
     @microposts = @search.results
   end
   
-  def sportinggoods 
-    @title = "Sporting Goods"
+  def books 
+    @title = "Books"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'sporting goods'
+      with :category,   'books'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def boats 
+    @title = "Boats"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'boats'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
@@ -71,6 +67,17 @@ class PagesController < ApplicationController
     @microposts = @search.results
   end
 
+  def collectable
+    @title = "Collectable"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'collectable'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
   def electronics 
     @title = "Electronics"
     @search = Micropost.search do
@@ -82,11 +89,66 @@ class PagesController < ApplicationController
     @microposts = @search.results
   end
 
-  def musicinstruments 
-    @title = "Musical Instruments"
+  def farm_and_garden 
+    @title = "Farm and Garden"
     @search = Micropost.search do
       fulltext params[:search]
-      with :category,   'musical instruments'
+      with :category,   'farm & garden'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def furniture
+    @title = "Furniture"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'furniture'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def jewelry 
+    @title = "Jewelry"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'jewelry'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def music_and_musical_instruments 
+    @title = "Music and Musical Instruments"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'music & musical instruments'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def sportinggoods 
+    @title = "Sporting Goods"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'sporting goods'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def services_wanted 
+    @title = "Services Wanted"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'services wanted'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end

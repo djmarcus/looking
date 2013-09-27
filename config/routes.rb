@@ -1,33 +1,28 @@
 Looking::Application.routes.draw do
 
-  #devise_for :consumers
-
   devise_for :users, :controllers => {:sessions => "sessions", :registrations => "registrations"} 
-  #devise_for :users
-  #get "sessions/new"
   
-
-#  resources :users
-  #resources :sessions,   :only => [:new, :create, :destroy]
   resources :microposts
 
-  #match '/signup',      :to => 'users#new'
-  #match '/signin',      :to => 'sessions#new'
-  #match '/signout',     :to => 'sessions#destroy'
-
-  match '/users',            :to => 'users#index', :via => "get"
-  match '/auto',             :to => 'pages#auto'
-  match '/collectables',     :to => 'pages#collectables'
-  match '/nostalgia',        :to => 'pages#nostalgia'
-  match '/electronics',      :to => 'pages#electronics'
-  match '/musicinstruments', :to => 'pages#musicinstruments'
-  match '/clothing',         :to => 'pages#clothing'
-  match '/sportinggoods',    :to => 'pages#sportinggoods'
-  match '/contact',          :to => 'pages#contact'
-  match '/howitworks',       :to => 'pages#howitworks'
-  match '/microposts',       :to => 'pages#microposts' 
-  match '/categories',       :to => 'pages#categories'
-  match '/termsofservice',   :to => 'pages#termsofservice'
+  match '/users',                     :to => 'users#index', :via => "get"
+  match '/arts_and_crafts',             :to => 'pages#arts_and_crafts'
+  match '/automotive_and_motorcycle',   :to => 'pages#automotive_and_motorcycle'
+  match '/books',                     :to => 'pages#books'
+  match '/boats',                     :to => 'pages#boats'
+  match '/clothing',                  :to => 'pages#clothing'
+  match '/collectable',               :to => 'pages#collectable'
+  match '/electronics',               :to => 'pages#electronics'
+  match '/farm_and_garden',             :to => 'pages#farm_and_garden'
+  match '/furniture',                 :to => 'pages#furniture'
+  match '/jewelry',                   :to => 'pages#jewelry'
+  match '/music_and_musical_instruments',:to => 'pages#music_and_musical_instruments'
+  match '/sportinggoods',             :to => 'pages#sportinggoods'
+  match '/services_wanted',             :to => 'pages#services_wanted'
+  match '/contact',                   :to => 'pages#contact'
+  match '/howitworks',                :to => 'pages#howitworks'
+  match '/microposts',                :to => 'pages#microposts' 
+  match '/categories',                :to => 'pages#categories'
+  match '/termsofservice',            :to => 'pages#termsofservice'
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:
