@@ -14,16 +14,14 @@
   </table>
 <% else %>
 
-  <h2>Your free shopping site for that hard to find item you're lookin for!</h2>
+  <h2>Your free way to locate that hard to find item you're lookin for!</h2>
   <img src="/images/Lookin4ithomepageForWeb.gif" alt="lookinforit.com" height="242" width="552"> 
 
 
   <%= link_to "Sign up now!", new_user_registration_path, :class => "signup_button round" %>
 
   <% content_for :sidebar do %>
-	<h2>Advertisements</h2>
-    <p>No ads yet!</p>
-
+    <p>Lookinforit.com is a marketplace where people can drop in and leave a note for what they're lookin' for, like a rare guitar, old jewelry, car parts, anything. Sellers come lookin' for buyers, buyers come lookin' for sellers, and everybody finds what they need. Get whatever you're lookin' for at lookinforit.com</p>
   <% end %>
 <% end %>
 
