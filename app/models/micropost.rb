@@ -12,7 +12,10 @@ class Micropost < ActiveRecord::Base
                 'farm & garden',
                 'furniture',
                 'jewelry',
+                'lost & found',
                 'music & musical instruments',
+                'pets looking for a home',
+                'pets lost & found',
                 'sporting goods',
                 'services wanted']
 

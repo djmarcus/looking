@@ -122,11 +122,44 @@ class PagesController < ApplicationController
     @microposts = @search.results
   end
 
+  def lost_and_found 
+    @title = "Lost & Found"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'lost & found'
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
   def music_and_musical_instruments 
     @title = "Music and Musical Instruments"
     @search = Micropost.search do
       fulltext params[:search]
       with(:category).any_of(['musical instruments','music & musical instruments'])
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def pets_looking_for_a_home 
+    @title = "Pets Looking For a Home"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with(:category).any_of(['pets looking for a home'])
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def pets_lost_and_found 
+    @title = "Pets Lost & Found"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with(:category).any_of(['pets lost & found'])
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
