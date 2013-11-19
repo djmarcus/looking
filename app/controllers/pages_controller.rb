@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   end
 
   def automotive_and_motorcycle
-    @title = "Automotive and Motorcycle"
+    @title = "Automotives and Motorcycles"
     @search = Micropost.search do
       fulltext params[:search]
       with(:category).any_of(['auto','automotive & motorcycle'])
@@ -68,7 +68,7 @@ class PagesController < ApplicationController
   end
 
   def collectable
-    @title = "Collectable"
+    @title = "Collectables"
     @search = Micropost.search do
       fulltext params[:search]
       with(:category).any_of(['collectable','collectables'])
@@ -90,7 +90,7 @@ class PagesController < ApplicationController
   end
 
   def farm_and_garden 
-    @title = "Farm and Garden"
+    @title = "Farm and Garden Items"
     @search = Micropost.search do
       fulltext params[:search]
       with :category,   'farm & garden'

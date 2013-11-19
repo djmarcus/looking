@@ -13,10 +13,11 @@ include Rails.application.routes.url_helpers
 
   # Return a title on a per-page basis.
   def title
-    base_title = "Lookinforit.com sample app"
+    base_title = "Find What you’re lookin for at lookinforit.com" 
     if @title.nil?
       base_title
     else
+      base_title = "Find #{@title} at lookinforit.com"
       "#{base_title} | #{@title}"
     end
   end
