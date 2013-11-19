@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     end
     @microposts = @search.results
    
-    @title = "Home"
+    @title = nil 
     if signed_in?
       @micropost = Micropost.new
       @microposts = Micropost.where("user_id = ?", current_user).paginate(:page => params[:page])
