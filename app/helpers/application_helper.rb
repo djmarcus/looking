@@ -16,6 +16,8 @@ include Rails.application.routes.url_helpers
     base_title = "Find What you’re lookin for at lookinforit.com" 
     if @title.nil?
       base_title
+    elsif @title = 'Home'
+      base_title
     else
       base_title = "Find #{@title} at lookinforit.com"
       "#{base_title} | #{@title}"
