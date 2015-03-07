@@ -3,9 +3,14 @@ How Tos:
 lookinforit work.
 
 *1. Reword collectible page text.
-*2. micropost.rb contains list of categories.  Modified.  May need to rake db to get new values in database.
-*3. create page controllers and views for all new categories.
-*4. In the application layout, add new links for categories in pulldown menu.
-*5. Add routes for new categories in config/routes.rb
-*6. Delete Nostalgia remnants from model, view, controller, and layout.
+
+How to Create categories:
+
+0. micropost.rb contains list of categories.  Modified.  
+   May need to rake db to get new values in database.
+1. edit pages_controller.rb to add page
+1.5 add a new view page views/pages/category.html.erb.
+2. In layout/application.htlm.erb, add new links for categories in pulldown menu.
+3. Add routes for new categories in config/routes.rb
+4. Delete Nostalgia remnants from model, view, controller, and layout.
 
