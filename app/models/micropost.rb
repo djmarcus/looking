@@ -14,6 +14,7 @@ class Micropost < ActiveRecord::Base
                 'jewelry',
                 'lost & found',
                 'music & musical instruments',
+                'personals',
                 'pets looking for a home',
                 'pets lost & found',
                 'sporting goods',

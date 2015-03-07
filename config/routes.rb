@@ -17,6 +17,7 @@ Looking::Application.routes.draw do
   match '/jewelry',                   :to => 'pages#jewelry'
   match '/lost_and_found',            :to => 'pages#lost_and_found'
   match '/music_and_musical_instruments',:to => 'pages#music_and_musical_instruments'
+  match '/personals',                 :to => 'pages#personals'
   match '/pets_looking_for_a_home',    :to => 'pages#pets_looking_for_a_home'    
   match '/pets_lost_and_found',       :to => 'pages#pets_lost_and_found'
   match '/sportinggoods',             :to => 'pages#sportinggoods'

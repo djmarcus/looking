@@ -133,11 +133,23 @@ class PagesController < ApplicationController
     @microposts = @search.results
   end
 
+
   def music_and_musical_instruments 
     @title = "Music and Musical Instruments"
     @search = Micropost.search do
       fulltext params[:search]
       with(:category).any_of(['musical instruments','music & musical instruments'])
+      order_by :created_at, :desc
+      paginate :page => params[:page], :per_page => 30
+    end
+    @microposts = @search.results
+  end
+
+  def personals 
+    @title = "Personals"
+    @search = Micropost.search do
+      fulltext params[:search]
+      with :category,   'personals'
       order_by :created_at, :desc
       paginate :page => params[:page], :per_page => 30
     end
